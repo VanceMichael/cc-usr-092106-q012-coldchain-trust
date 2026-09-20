@@ -1,0 +1,10 @@
+{
+  "domain": "coldchain-trust",
+  "version": 1,
+  "facts": [
+    "犯罪团伙可能用泡沫箱和铝箔纸伪装冷链",
+    "失控流通会带来药品变质风险",
+    "多轮收购使责任链更难还原"
+  ],
+  "sample_id": "sample-012"
+}
