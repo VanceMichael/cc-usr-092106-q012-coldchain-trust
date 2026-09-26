@@ -4,6 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node --test"
+    "test": "node --test",
+    "fixture": "node scripts/generate-fixture.mjs > fixtures/evidence.json",
+    "report": "node scripts/report.mjs"
   }
 }

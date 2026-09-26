@@ -1,0 +1,2173 @@
+{
+  "domain": "coldchain-trust",
+  "schema_version": 1,
+  "generated_at": "2026-09-12T00:00:00Z",
+  "sensors": [
+    {
+      "sensor_id": "S1",
+      "hw_serial": "HW-S1-7781",
+      "attestation_key_id": "AKID-S1",
+      "model": "TL-200"
+    },
+    {
+      "sensor_id": "S2",
+      "hw_serial": "HW-S2-3320",
+      "attestation_key_id": "AKID-S2",
+      "model": "TL-200"
+    },
+    {
+      "sensor_id": "S4",
+      "hw_serial": "HW-S4-1198",
+      "attestation_key_id": "AKID-S4",
+      "model": "TL-200"
+    },
+    {
+      "sensor_id": "S5",
+      "hw_serial": "HW-S5-1205",
+      "attestation_key_id": "AKID-S5",
+      "model": "TL-200"
+    },
+    {
+      "sensor_id": "S6",
+      "hw_serial": "HW-S6-6641",
+      "attestation_key_id": "AKID-S6",
+      "model": "TL-200"
+    }
+  ],
+  "calibrations": [
+    {
+      "calibration_id": "CAL-S1",
+      "sensor_id": "S1",
+      "kind": "initial",
+      "valid_from": "2026-01-10T00:00:00Z",
+      "valid_to": null,
+      "bias_c": 0,
+      "max_uncertainty_c": 0.3,
+      "calibrated_by": "METRO-LAB",
+      "certificate_ref": "CERT-2026-110",
+      "corrects_calibration_id": null
+    },
+    {
+      "calibration_id": "CAL-S2",
+      "sensor_id": "S2",
+      "kind": "initial",
+      "valid_from": "2026-01-10T00:00:00Z",
+      "valid_to": null,
+      "bias_c": 0,
+      "max_uncertainty_c": 0.3,
+      "calibrated_by": "METRO-LAB",
+      "certificate_ref": "CERT-2026-111",
+      "corrects_calibration_id": null
+    },
+    {
+      "calibration_id": "CAL-S4",
+      "sensor_id": "S4",
+      "kind": "initial",
+      "valid_from": "2026-01-10T00:00:00Z",
+      "valid_to": null,
+      "bias_c": 0,
+      "max_uncertainty_c": 0.3,
+      "calibrated_by": "METRO-LAB",
+      "certificate_ref": "CERT-2026-112",
+      "corrects_calibration_id": null
+    },
+    {
+      "calibration_id": "CAL-S5",
+      "sensor_id": "S5",
+      "kind": "initial",
+      "valid_from": "2026-01-10T00:00:00Z",
+      "valid_to": null,
+      "bias_c": 0,
+      "max_uncertainty_c": 0.3,
+      "calibrated_by": "METRO-LAB",
+      "certificate_ref": "CERT-2026-113",
+      "corrects_calibration_id": null
+    },
+    {
+      "calibration_id": "CAL-S6",
+      "sensor_id": "S6",
+      "kind": "initial",
+      "valid_from": "2026-01-10T00:00:00Z",
+      "valid_to": null,
+      "bias_c": 0,
+      "max_uncertainty_c": 0.3,
+      "calibrated_by": "METRO-LAB",
+      "certificate_ref": "CERT-2026-114",
+      "corrects_calibration_id": null
+    }
+  ],
+  "containers": [
+    {
+      "container_id": "C1",
+      "kind": "reefer",
+      "seal_id": "SEAL-C1-001",
+      "note": "北京发车冷藏车"
+    },
+    {
+      "container_id": "C2",
+      "kind": "insulated_box",
+      "seal_id": "SEAL-C2-009",
+      "note": "法兰克福中转被动保温箱"
+    },
+    {
+      "container_id": "C3",
+      "kind": "passive_pack",
+      "seal_id": "SEAL-C3-002",
+      "note": "配送城市药房"
+    },
+    {
+      "container_id": "C4",
+      "kind": "passive_pack",
+      "seal_id": "SEAL-C4-002",
+      "note": "配送社区诊所"
+    },
+    {
+      "container_id": "C5",
+      "kind": "reefer",
+      "seal_id": "SEAL-C5-007",
+      "note": "疫苗冷藏车（中途掉线）"
+    },
+    {
+      "container_id": "CF",
+      "kind": "foam_wrapped",
+      "seal_id": null,
+      "note": "泡沫箱加铝箔纸，外观像冷链，无任何温控设备"
+    }
+  ],
+  "batches": [
+    {
+      "batch_id": "B1",
+      "product_name": "重组人胰岛素注射液",
+      "initial_quantity": 100,
+      "unit": "支",
+      "manufacture_date": "2026-08-10"
+    },
+    {
+      "batch_id": "B2",
+      "product_name": "静注人免疫球蛋白",
+      "initial_quantity": 40,
+      "unit": "瓶",
+      "manufacture_date": "2026-08-20"
+    },
+    {
+      "batch_id": "B1-A",
+      "product_name": "重组人胰岛素注射液（拆分配额60）",
+      "initial_quantity": 60,
+      "unit": "支",
+      "manufacture_date": "2026-08-10"
+    },
+    {
+      "batch_id": "B1-B",
+      "product_name": "重组人胰岛素注射液（拆分配额40）",
+      "initial_quantity": 40,
+      "unit": "支",
+      "manufacture_date": "2026-08-10"
+    },
+    {
+      "batch_id": "B4",
+      "product_name": "狂犬疫苗",
+      "initial_quantity": 30,
+      "unit": "支",
+      "manufacture_date": "2026-08-25"
+    },
+    {
+      "batch_id": "B3",
+      "product_name": "人血白蛋白（来源不明）",
+      "initial_quantity": 20,
+      "unit": "瓶",
+      "manufacture_date": "2026-07-01"
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T1",
+      "carrier_party_id": "P-CAR",
+      "temp_spec": {
+        "min_c": 2,
+        "max_c": 8
+      },
+      "route": [
+        {
+          "location": "北京",
+          "tz": "Asia/Shanghai"
+        },
+        {
+          "location": "法兰克福",
+          "tz": "Europe/Berlin"
+        }
+      ]
+    },
+    {
+      "task_id": "T2",
+      "carrier_party_id": "P-DIST",
+      "temp_spec": {
+        "min_c": 2,
+        "max_c": 8
+      },
+      "route": [
+        {
+          "location": "法兰克福",
+          "tz": "Europe/Berlin"
+        },
+        {
+          "location": "美因茨",
+          "tz": "Europe/Berlin"
+        }
+      ]
+    },
+    {
+      "task_id": "T3",
+      "carrier_party_id": "P-DIST",
+      "temp_spec": {
+        "min_c": 2,
+        "max_c": 8
+      },
+      "route": [
+        {
+          "location": "美因茨",
+          "tz": "Europe/Berlin"
+        },
+        {
+          "location": "城市药房",
+          "tz": "Europe/Berlin"
+        }
+      ]
+    },
+    {
+      "task_id": "T4",
+      "carrier_party_id": "P-DIST",
+      "temp_spec": {
+        "min_c": 2,
+        "max_c": 8
+      },
+      "route": [
+        {
+          "location": "美因茨",
+          "tz": "Europe/Berlin"
+        },
+        {
+          "location": "河畔社区诊所",
+          "tz": "Europe/Berlin"
+        }
+      ]
+    },
+    {
+      "task_id": "T5",
+      "carrier_party_id": "P-CAR",
+      "temp_spec": {
+        "min_c": 2,
+        "max_c": 8
+      },
+      "route": [
+        {
+          "location": "北京",
+          "tz": "Asia/Shanghai"
+        },
+        {
+          "location": "西安",
+          "tz": "Asia/Shanghai"
+        }
+      ]
+    }
+  ],
+  "parties": [
+    {
+      "party_id": "P-MFG",
+      "name": "华北生物制药",
+      "role": "manufacturer"
+    },
+    {
+      "party_id": "P-CAR",
+      "name": "洲际冷链",
+      "role": "carrier"
+    },
+    {
+      "party_id": "P-HUB",
+      "name": "法兰克福分拨中心",
+      "role": "hub"
+    },
+    {
+      "party_id": "P-DIST",
+      "name": "莱茵医药分销",
+      "role": "distributor"
+    },
+    {
+      "party_id": "P-PHA",
+      "name": "城市药房",
+      "role": "pharmacy"
+    },
+    {
+      "party_id": "P-CLI",
+      "name": "河畔社区诊所",
+      "role": "clinic"
+    },
+    {
+      "party_id": "P-GANG",
+      "name": "无牌收购人",
+      "role": "unlicensed"
+    },
+    {
+      "party_id": "P-CLI2",
+      "name": "益康诊所",
+      "role": "clinic"
+    }
+  ],
+  "events": [
+    {
+      "task_id": null,
+      "location": "北京",
+      "from_party": null,
+      "to_party": null,
+      "container_id": "C1",
+      "from_container_id": null,
+      "batch_ids": [],
+      "outputs": [],
+      "sensor_id": "S1",
+      "seal_id": null,
+      "note": null,
+      "event_id": "E-ATT-S1",
+      "at": "2026-09-01T01:00:00Z",
+      "type": "attach",
+      "signed_by": "EMP-WH-01"
+    },
+    {
+      "task_id": "T1",
+      "location": "北京",
+      "from_party": "P-MFG",
+      "to_party": null,
+      "container_id": "C1",
+      "from_container_id": null,
+      "batch_ids": [
+        "B1"
+      ],
+      "outputs": [],
+      "sensor_id": null,
+      "seal_id": "SEAL-C1-001",
+      "note": null,
+      "event_id": "E-PACK-B1",
+      "at": "2026-09-01T01:05:00Z",
+      "type": "pack",
+      "signed_by": "EMP-WH-01"
+    },
+    {
+      "task_id": "T1",
+      "location": "北京",
+      "from_party": "P-MFG",
+      "to_party": "P-CAR",
+      "container_id": "C1",
+      "from_container_id": null,
+      "batch_ids": [
+        "B1"
+      ],
+      "outputs": [],
+      "sensor_id": null,
+      "seal_id": null,
+      "note": null,
+      "event_id": "E-HO-1",
+      "at": "2026-09-01T01:12:00Z",
+      "type": "handover",
+      "signed_by": "EMP-DRV-01"
+    },
+    {
+      "task_id": "T1",
+      "location": null,
+      "from_party": null,
+      "to_party": null,
+      "container_id": "C1",
+      "from_container_id": null,
+      "batch_ids": [],
+      "outputs": [],
+      "sensor_id": null,
+      "seal_id": null,
+      "note": null,
+      "event_id": "E-DO-1O",
+      "at": "2026-09-01T01:15:00Z",
+      "type": "door_open",
+      "signed_by": "EMP-DRV-01"
+    },
+    {
+      "task_id": "T1",
+      "location": null,
+      "from_party": null,
+      "to_party": null,
+      "container_id": "C1",
+      "from_container_id": null,
+      "batch_ids": [],
+      "outputs": [],
+      "sensor_id": null,
+      "seal_id": null,
+      "note": null,
+      "event_id": "E-DO-1C",
+      "at": "2026-09-01T01:18:00Z",
+      "type": "door_close",
+      "signed_by": "EMP-DRV-01"
+    },
+    {
+      "task_id": "T1",
+      "location": "中转停机坪（当地12:20）",
+      "from_party": null,
+      "to_party": null,
+      "container_id": "C1",
+      "from_container_id": null,
+      "batch_ids": [],
+      "outputs": [],
+      "sensor_id": null,
+      "seal_id": null,
+      "note": null,
+      "event_id": "E-DO-2O",
+      "at": "2026-09-01T12:20:00+02:00",
+      "type": "door_open",
+      "signed_by": "EMP-DRV-01"
+    },
+    {
+      "task_id": "T1",
+      "location": "中转停机坪",
+      "from_party": null,
+      "to_party": null,
+      "container_id": "C1",
+      "from_container_id": null,
+      "batch_ids": [],
+      "outputs": [],
+      "sensor_id": null,
+      "seal_id": null,
+      "note": null,
+      "event_id": "E-DO-2C",
+      "at": "2026-09-01T11:00:00Z",
+      "type": "door_close",
+      "signed_by": "EMP-DRV-01"
+    },
+    {
+      "task_id": null,
+      "location": "法兰克福",
+      "from_party": null,
+      "to_party": null,
+      "container_id": "C2",
+      "from_container_id": null,
+      "batch_ids": [],
+      "outputs": [],
+      "sensor_id": "S2",
+      "seal_id": null,
+      "note": null,
+      "event_id": "E-ATT-S2",
+      "at": "2026-09-01T13:50:00Z",
+      "type": "attach",
+      "signed_by": "EMP-HUB-02"
+    },
+    {
+      "task_id": "T1",
+      "location": "法兰克福",
+      "from_party": "P-CAR",
+      "to_party": null,
+      "container_id": "C2",
+      "from_container_id": "C1",
+      "batch_ids": [
+        "B1"
+      ],
+      "outputs": [],
+      "sensor_id": null,
+      "seal_id": "SEAL-C2-009",
+      "note": null,
+      "event_id": "E-REPACK-B1",
+      "at": "2026-09-01T14:00:00Z",
+      "type": "repack",
+      "signed_by": "EMP-HUB-02"
+    },
+    {
+      "task_id": null,
+      "location": null,
+      "from_party": null,
+      "to_party": null,
+      "container_id": "C1",
+      "from_container_id": null,
+      "batch_ids": [],
+      "outputs": [],
+      "sensor_id": "S1",
+      "seal_id": null,
+      "note": null,
+      "event_id": "E-DET-S1",
+      "at": "2026-09-01T14:00:00Z",
+      "type": "detach",
+      "signed_by": "EMP-HUB-02"
+    },
+    {
+      "task_id": "T1",
+      "location": "法兰克福",
+      "from_party": "P-CAR",
+      "to_party": "P-HUB",
+      "container_id": "C2",
+      "from_container_id": null,
+      "batch_ids": [
+        "B1"
+      ],
+      "outputs": [],
+      "sensor_id": null,
+      "seal_id": null,
+      "note": null,
+      "event_id": "E-HO-2",
+      "at": "2026-09-01T14:10:00Z",
+      "type": "handover",
+      "signed_by": "EMP-HUB-02"
+    },
+    {
+      "task_id": "T2",
+      "location": "法兰克福",
+      "from_party": "P-HUB",
+      "to_party": null,
+      "container_id": "C2",
+      "from_container_id": null,
+      "batch_ids": [
+        "B2"
+      ],
+      "outputs": [],
+      "sensor_id": null,
+      "seal_id": null,
+      "note": null,
+      "event_id": "E-PACK-B2",
+      "at": "2026-09-01T18:00:00Z",
+      "type": "pack",
+      "signed_by": "EMP-HUB-02"
+    },
+    {
+      "task_id": "T2",
+      "location": "美因茨",
+      "from_party": "P-HUB",
+      "to_party": "P-DIST",
+      "container_id": "C2",
+      "from_container_id": null,
+      "batch_ids": [
+        "B1",
+        "B2"
+      ],
+      "outputs": [],
+      "sensor_id": null,
+      "seal_id": null,
+      "note": null,
+      "event_id": "E-HO-3",
+      "at": "2026-09-02T06:00:00Z",
+      "type": "handover",
+      "signed_by": "EMP-DST-03"
+    },
+    {
+      "task_id": "T2",
+      "location": "美因茨",
+      "from_party": null,
+      "to_party": null,
+      "container_id": "C2",
+      "from_container_id": null,
+      "batch_ids": [
+        "B2"
+      ],
+      "outputs": [],
+      "sensor_id": null,
+      "seal_id": null,
+      "note": "B2 入库受控冰箱",
+      "event_id": "E-UNPACK-B2",
+      "at": "2026-09-02T06:30:00Z",
+      "type": "unpack",
+      "signed_by": "EMP-DST-03"
+    },
+    {
+      "task_id": null,
+      "location": null,
+      "from_party": null,
+      "to_party": null,
+      "container_id": "C3",
+      "from_container_id": null,
+      "batch_ids": [],
+      "outputs": [],
+      "sensor_id": "S4",
+      "seal_id": null,
+      "note": null,
+      "event_id": "E-ATT-S4",
+      "at": "2026-09-02T06:20:00Z",
+      "type": "attach",
+      "signed_by": "EMP-DST-03"
+    },
+    {
+      "task_id": null,
+      "location": null,
+      "from_party": null,
+      "to_party": null,
+      "container_id": "C4",
+      "from_container_id": null,
+      "batch_ids": [],
+      "outputs": [],
+      "sensor_id": "S5",
+      "seal_id": null,
+      "note": null,
+      "event_id": "E-ATT-S5",
+      "at": "2026-09-02T06:20:00Z",
+      "type": "attach",
+      "signed_by": "EMP-DST-03"
+    },
+    {
+      "task_id": "T2",
+      "location": "美因茨",
+      "from_party": null,
+      "to_party": null,
+      "container_id": "C2",
+      "from_container_id": null,
+      "batch_ids": [
+        "B1"
+      ],
+      "outputs": [
+        {
+          "batch_id": "B1-A",
+          "container_id": "C3",
+          "quantity": 60
+        },
+        {
+          "batch_id": "B1-B",
+          "container_id": "C4",
+          "quantity": 40
+        }
+      ],
+      "sensor_id": null,
+      "seal_id": null,
+      "note": null,
+      "event_id": "E-SPLIT-B1",
+      "at": "2026-09-02T06:30:00Z",
+      "type": "split",
+      "signed_by": "EMP-DST-03"
+    },
+    {
+      "task_id": "T3",
+      "location": "城市药房",
+      "from_party": "P-DIST",
+      "to_party": "P-PHA",
+      "container_id": "C3",
+      "from_container_id": null,
+      "batch_ids": [
+        "B1-A"
+      ],
+      "outputs": [],
+      "sensor_id": null,
+      "seal_id": null,
+      "note": null,
+      "event_id": "E-HO-4",
+      "at": "2026-09-02T12:00:00Z",
+      "type": "handover",
+      "signed_by": "EMP-PHA-09"
+    },
+    {
+      "task_id": "T3",
+      "location": "城市药房",
+      "from_party": null,
+      "to_party": "P-PHA",
+      "container_id": "C3",
+      "from_container_id": null,
+      "batch_ids": [
+        "B1-A"
+      ],
+      "outputs": [],
+      "sensor_id": null,
+      "seal_id": null,
+      "note": null,
+      "event_id": "E-RCP-A",
+      "at": "2026-09-02T12:30:00Z",
+      "type": "receipt",
+      "signed_by": "EMP-PHA-09"
+    },
+    {
+      "task_id": "T3",
+      "location": null,
+      "from_party": null,
+      "to_party": null,
+      "container_id": "C3",
+      "from_container_id": null,
+      "batch_ids": [
+        "B1-A"
+      ],
+      "outputs": [],
+      "sensor_id": null,
+      "seal_id": null,
+      "note": "放行核验通过后入库",
+      "event_id": "E-UNPACK-A",
+      "at": "2026-09-02T13:00:00Z",
+      "type": "unpack",
+      "signed_by": "EMP-PHA-09"
+    },
+    {
+      "task_id": "T4",
+      "location": "河畔社区诊所",
+      "from_party": "P-DIST",
+      "to_party": "P-CLI",
+      "container_id": "C4",
+      "from_container_id": null,
+      "batch_ids": [
+        "B1-B"
+      ],
+      "outputs": [],
+      "sensor_id": null,
+      "seal_id": null,
+      "note": null,
+      "event_id": "E-HO-5",
+      "at": "2026-09-02T13:00:00Z",
+      "type": "handover",
+      "signed_by": "EMP-CLI-07"
+    },
+    {
+      "task_id": "T4",
+      "location": "河畔社区诊所",
+      "from_party": null,
+      "to_party": "P-CLI",
+      "container_id": "C4",
+      "from_container_id": null,
+      "batch_ids": [
+        "B1-B"
+      ],
+      "outputs": [],
+      "sensor_id": null,
+      "seal_id": null,
+      "note": null,
+      "event_id": "E-RCP-B",
+      "at": "2026-09-02T13:30:00Z",
+      "type": "receipt",
+      "signed_by": "EMP-CLI-07"
+    },
+    {
+      "task_id": null,
+      "location": null,
+      "from_party": null,
+      "to_party": null,
+      "container_id": "C5",
+      "from_container_id": null,
+      "batch_ids": [],
+      "outputs": [],
+      "sensor_id": "S6",
+      "seal_id": null,
+      "note": null,
+      "event_id": "E-ATT-S6",
+      "at": "2026-09-05T02:00:00Z",
+      "type": "attach",
+      "signed_by": "EMP-WH-01"
+    },
+    {
+      "task_id": "T5",
+      "location": "北京",
+      "from_party": "P-MFG",
+      "to_party": null,
+      "container_id": "C5",
+      "from_container_id": null,
+      "batch_ids": [
+        "B4"
+      ],
+      "outputs": [],
+      "sensor_id": null,
+      "seal_id": "SEAL-C5-007",
+      "note": null,
+      "event_id": "E-PACK-B4",
+      "at": "2026-09-05T02:00:00Z",
+      "type": "pack",
+      "signed_by": "EMP-WH-01"
+    },
+    {
+      "task_id": "T5",
+      "location": null,
+      "from_party": "P-MFG",
+      "to_party": "P-CAR",
+      "container_id": "C5",
+      "from_container_id": null,
+      "batch_ids": [
+        "B4"
+      ],
+      "outputs": [],
+      "sensor_id": null,
+      "seal_id": null,
+      "note": null,
+      "event_id": "E-HO-6",
+      "at": "2026-09-05T02:05:00Z",
+      "type": "handover",
+      "signed_by": "EMP-DRV-02"
+    },
+    {
+      "task_id": "T5",
+      "location": "西安",
+      "from_party": null,
+      "to_party": "P-CLI2",
+      "container_id": "C5",
+      "from_container_id": null,
+      "batch_ids": [
+        "B4"
+      ],
+      "outputs": [],
+      "sensor_id": null,
+      "seal_id": null,
+      "note": null,
+      "event_id": "E-RCP-B4",
+      "at": "2026-09-05T12:00:00Z",
+      "type": "receipt",
+      "signed_by": "EMP-CLI2-01"
+    },
+    {
+      "task_id": "T5",
+      "location": null,
+      "from_party": null,
+      "to_party": null,
+      "container_id": "C5",
+      "from_container_id": null,
+      "batch_ids": [
+        "B4"
+      ],
+      "outputs": [],
+      "sensor_id": null,
+      "seal_id": null,
+      "note": null,
+      "event_id": "E-UNPACK-B4",
+      "at": "2026-09-05T12:00:00Z",
+      "type": "unpack",
+      "signed_by": "EMP-CLI2-01"
+    },
+    {
+      "task_id": null,
+      "location": "城郊仓库",
+      "from_party": "P-GANG",
+      "to_party": null,
+      "container_id": "CF",
+      "from_container_id": null,
+      "batch_ids": [
+        "B3"
+      ],
+      "outputs": [],
+      "sensor_id": null,
+      "seal_id": null,
+      "note": "无人签署的装箱",
+      "event_id": "E-PACK-B3",
+      "at": "2026-09-10T03:00:00Z",
+      "type": "pack",
+      "signed_by": null
+    },
+    {
+      "task_id": null,
+      "location": "高速服务区",
+      "from_party": "P-GANG",
+      "to_party": "P-GANG",
+      "container_id": "CF",
+      "from_container_id": null,
+      "batch_ids": [
+        "B3"
+      ],
+      "outputs": [],
+      "sensor_id": null,
+      "seal_id": null,
+      "note": "多轮收购之一，责任链断裂",
+      "event_id": "E-HO-7",
+      "at": "2026-09-10T15:00:00Z",
+      "type": "handover",
+      "signed_by": null
+    },
+    {
+      "task_id": null,
+      "location": "益康诊所",
+      "from_party": null,
+      "to_party": "P-CLI2",
+      "container_id": "CF",
+      "from_container_id": null,
+      "batch_ids": [
+        "B3"
+      ],
+      "outputs": [],
+      "sensor_id": null,
+      "seal_id": null,
+      "note": null,
+      "event_id": "E-RCP-B3",
+      "at": "2026-09-11T09:00:00Z",
+      "type": "receipt",
+      "signed_by": "EMP-CLI2-01"
+    }
+  ],
+  "temperature_segments": [
+    {
+      "segment_id": "SEG-S1-REALTIME",
+      "sensor_id": "S1",
+      "calibration_id": "CAL-S1",
+      "started_at": "2026-09-01T01:05:00Z",
+      "ended_at": "2026-09-01T14:00:00Z",
+      "interval_s": 900,
+      "samples": [
+        {
+          "t": "2026-09-01T01:05:00.000Z",
+          "c": 4.75
+        },
+        {
+          "t": "2026-09-01T01:20:00.000Z",
+          "c": 4.9
+        },
+        {
+          "t": "2026-09-01T01:35:00.000Z",
+          "c": 5.06
+        },
+        {
+          "t": "2026-09-01T01:50:00.000Z",
+          "c": 5.24
+        },
+        {
+          "t": "2026-09-01T02:05:00.000Z",
+          "c": 5.41
+        },
+        {
+          "t": "2026-09-01T02:20:00.000Z",
+          "c": 5.57
+        },
+        {
+          "t": "2026-09-01T02:35:00.000Z",
+          "c": 5.7
+        },
+        {
+          "t": "2026-09-01T02:50:00.000Z",
+          "c": 5.81
+        },
+        {
+          "t": "2026-09-01T03:05:00.000Z",
+          "c": 5.87
+        },
+        {
+          "t": "2026-09-01T03:20:00.000Z",
+          "c": 5.9
+        },
+        {
+          "t": "2026-09-01T03:35:00.000Z",
+          "c": 5.88
+        },
+        {
+          "t": "2026-09-01T03:50:00.000Z",
+          "c": 5.82
+        },
+        {
+          "t": "2026-09-01T04:05:00.000Z",
+          "c": 5.72
+        },
+        {
+          "t": "2026-09-01T04:20:00.000Z",
+          "c": 5.59
+        },
+        {
+          "t": "2026-09-01T04:35:00.000Z",
+          "c": 5.43
+        },
+        {
+          "t": "2026-09-01T04:50:00.000Z",
+          "c": 5.26
+        },
+        {
+          "t": "2026-09-01T05:05:00.000Z",
+          "c": 5.09
+        },
+        {
+          "t": "2026-09-01T05:20:00.000Z",
+          "c": 4.92
+        },
+        {
+          "t": "2026-09-01T05:35:00.000Z",
+          "c": 4.77
+        },
+        {
+          "t": "2026-09-01T05:50:00.000Z",
+          "c": 4.65
+        },
+        {
+          "t": "2026-09-01T06:05:00.000Z",
+          "c": 4.56
+        },
+        {
+          "t": "2026-09-01T06:20:00.000Z",
+          "c": 4.51
+        },
+        {
+          "t": "2026-09-01T06:35:00.000Z",
+          "c": 4.5
+        },
+        {
+          "t": "2026-09-01T06:50:00.000Z",
+          "c": 4.54
+        },
+        {
+          "t": "2026-09-01T07:05:00.000Z",
+          "c": 4.62
+        },
+        {
+          "t": "2026-09-01T07:20:00.000Z",
+          "c": 4.73
+        },
+        {
+          "t": "2026-09-01T07:35:00.000Z",
+          "c": 4.88
+        },
+        {
+          "t": "2026-09-01T07:50:00.000Z",
+          "c": 5.04
+        },
+        {
+          "t": "2026-09-01T08:05:00.000Z",
+          "c": 5.21
+        },
+        {
+          "t": "2026-09-01T08:20:00.000Z",
+          "c": 5.39
+        },
+        {
+          "t": "2026-09-01T08:35:00.000Z",
+          "c": 5.55
+        },
+        {
+          "t": "2026-09-01T08:50:00.000Z",
+          "c": 5.69
+        },
+        {
+          "t": "2026-09-01T09:05:00.000Z",
+          "c": 5.8
+        },
+        {
+          "t": "2026-09-01T09:20:00.000Z",
+          "c": 5.87
+        },
+        {
+          "t": "2026-09-01T09:35:00.000Z",
+          "c": 5.9
+        },
+        {
+          "t": "2026-09-01T09:50:00.000Z",
+          "c": 5.89
+        },
+        {
+          "t": "2026-09-01T10:05:00.000Z",
+          "c": 5.83
+        },
+        {
+          "t": "2026-09-01T10:20:00.000Z",
+          "c": 5.74
+        },
+        {
+          "t": "2026-09-01T10:35:00.000Z",
+          "c": 5.61
+        },
+        {
+          "t": "2026-09-01T10:50:00.000Z",
+          "c": 5.45
+        },
+        {
+          "t": "2026-09-01T11:05:00.000Z",
+          "c": 5.29
+        },
+        {
+          "t": "2026-09-01T11:20:00.000Z",
+          "c": 5.11
+        },
+        {
+          "t": "2026-09-01T11:35:00.000Z",
+          "c": 4.94
+        },
+        {
+          "t": "2026-09-01T11:50:00.000Z",
+          "c": 4.79
+        },
+        {
+          "t": "2026-09-01T12:05:00.000Z",
+          "c": 4.66
+        },
+        {
+          "t": "2026-09-01T12:20:00.000Z",
+          "c": 4.57
+        },
+        {
+          "t": "2026-09-01T12:35:00.000Z",
+          "c": 4.51
+        },
+        {
+          "t": "2026-09-01T12:50:00.000Z",
+          "c": 4.5
+        },
+        {
+          "t": "2026-09-01T13:05:00.000Z",
+          "c": 4.53
+        },
+        {
+          "t": "2026-09-01T13:20:00.000Z",
+          "c": 4.61
+        },
+        {
+          "t": "2026-09-01T13:35:00.000Z",
+          "c": 4.72
+        },
+        {
+          "t": "2026-09-01T13:50:00.000Z",
+          "c": 4.86
+        }
+      ],
+      "uploaded_at": "2026-09-01T14:05:00Z",
+      "transmission": "realtime",
+      "status": "active",
+      "corrected_by": null,
+      "note": "实时压缩上报，15分钟均值，峰值被平均掩盖"
+    },
+    {
+      "segment_id": "SEG-S1-BUFFERED-LATE",
+      "sensor_id": "S1",
+      "calibration_id": "CAL-S1",
+      "started_at": "2026-09-01T10:19:00Z",
+      "ended_at": "2026-09-01T10:58:00Z",
+      "interval_s": 60,
+      "samples": [
+        {
+          "t": "2026-09-01T10:19:00.000Z",
+          "c": 6
+        },
+        {
+          "t": "2026-09-01T10:20:00.000Z",
+          "c": 6.5
+        },
+        {
+          "t": "2026-09-01T10:21:00.000Z",
+          "c": 13.31
+        },
+        {
+          "t": "2026-09-01T10:22:00.000Z",
+          "c": 13.1
+        },
+        {
+          "t": "2026-09-01T10:23:00.000Z",
+          "c": 12.89
+        },
+        {
+          "t": "2026-09-01T10:24:00.000Z",
+          "c": 12.87
+        },
+        {
+          "t": "2026-09-01T10:25:00.000Z",
+          "c": 13.07
+        },
+        {
+          "t": "2026-09-01T10:26:00.000Z",
+          "c": 13.29
+        },
+        {
+          "t": "2026-09-01T10:27:00.000Z",
+          "c": 13.34
+        },
+        {
+          "t": "2026-09-01T10:28:00.000Z",
+          "c": 13.17
+        },
+        {
+          "t": "2026-09-01T10:29:00.000Z",
+          "c": 12.93
+        },
+        {
+          "t": "2026-09-01T10:30:00.000Z",
+          "c": 12.85
+        },
+        {
+          "t": "2026-09-01T10:31:00.000Z",
+          "c": 13
+        },
+        {
+          "t": "2026-09-01T10:32:00.000Z",
+          "c": 13.24
+        },
+        {
+          "t": "2026-09-01T10:33:00.000Z",
+          "c": 13.35
+        },
+        {
+          "t": "2026-09-01T10:34:00.000Z",
+          "c": 13.23
+        },
+        {
+          "t": "2026-09-01T10:35:00.000Z",
+          "c": 12.99
+        },
+        {
+          "t": "2026-09-01T10:36:00.000Z",
+          "c": 12.85
+        },
+        {
+          "t": "2026-09-01T10:37:00.000Z",
+          "c": 12.94
+        },
+        {
+          "t": "2026-09-01T10:38:00.000Z",
+          "c": 13.17
+        },
+        {
+          "t": "2026-09-01T10:39:00.000Z",
+          "c": 13.34
+        },
+        {
+          "t": "2026-09-01T10:40:00.000Z",
+          "c": 13.29
+        },
+        {
+          "t": "2026-09-01T10:41:00.000Z",
+          "c": 13.06
+        },
+        {
+          "t": "2026-09-01T10:42:00.000Z",
+          "c": 12.87
+        },
+        {
+          "t": "2026-09-01T10:43:00.000Z",
+          "c": 12.89
+        },
+        {
+          "t": "2026-09-01T10:44:00.000Z",
+          "c": 13.1
+        },
+        {
+          "t": "2026-09-01T10:45:00.000Z",
+          "c": 13.31
+        },
+        {
+          "t": "2026-09-01T10:46:00.000Z",
+          "c": 13.33
+        },
+        {
+          "t": "2026-09-01T10:47:00.000Z",
+          "c": 13.13
+        },
+        {
+          "t": "2026-09-01T10:48:00.000Z",
+          "c": 12.91
+        },
+        {
+          "t": "2026-09-01T10:49:00.000Z",
+          "c": 12.86
+        },
+        {
+          "t": "2026-09-01T10:50:00.000Z",
+          "c": 13.03
+        },
+        {
+          "t": "2026-09-01T10:51:00.000Z",
+          "c": 13.27
+        },
+        {
+          "t": "2026-09-01T10:52:00.000Z",
+          "c": 13.35
+        },
+        {
+          "t": "2026-09-01T10:53:00.000Z",
+          "c": 13.2
+        },
+        {
+          "t": "2026-09-01T10:54:00.000Z",
+          "c": 12.96
+        },
+        {
+          "t": "2026-09-01T10:55:00.000Z",
+          "c": 12.85
+        },
+        {
+          "t": "2026-09-01T10:56:00.000Z",
+          "c": 12.97
+        },
+        {
+          "t": "2026-09-01T10:57:00.000Z",
+          "c": 12.5
+        },
+        {
+          "t": "2026-09-01T10:58:00.000Z",
+          "c": 12
+        }
+      ],
+      "uploaded_at": "2026-09-03T02:00:00Z",
+      "transmission": "buffered_late",
+      "status": "active",
+      "corrected_by": null,
+      "note": "设备回库后导出的缓存原始日志，晚于放行到达，不得回写旧结论"
+    },
+    {
+      "segment_id": "SEG-S2",
+      "sensor_id": "S2",
+      "calibration_id": "CAL-S2",
+      "started_at": "2026-09-01T14:00:00Z",
+      "ended_at": "2026-09-02T06:30:00Z",
+      "interval_s": 900,
+      "samples": [
+        {
+          "t": "2026-09-01T14:00:00.000Z",
+          "c": 5.1
+        },
+        {
+          "t": "2026-09-01T14:15:00.000Z",
+          "c": 5.03
+        },
+        {
+          "t": "2026-09-01T14:30:00.000Z",
+          "c": 4.95
+        },
+        {
+          "t": "2026-09-01T14:45:00.000Z",
+          "c": 4.88
+        },
+        {
+          "t": "2026-09-01T15:00:00.000Z",
+          "c": 4.81
+        },
+        {
+          "t": "2026-09-01T15:15:00.000Z",
+          "c": 4.74
+        },
+        {
+          "t": "2026-09-01T15:30:00.000Z",
+          "c": 4.67
+        },
+        {
+          "t": "2026-09-01T15:45:00.000Z",
+          "c": 4.61
+        },
+        {
+          "t": "2026-09-01T16:00:00.000Z",
+          "c": 4.56
+        },
+        {
+          "t": "2026-09-01T16:15:00.000Z",
+          "c": 4.51
+        },
+        {
+          "t": "2026-09-01T16:30:00.000Z",
+          "c": 4.47
+        },
+        {
+          "t": "2026-09-01T16:45:00.000Z",
+          "c": 4.44
+        },
+        {
+          "t": "2026-09-01T17:00:00.000Z",
+          "c": 4.42
+        },
+        {
+          "t": "2026-09-01T17:15:00.000Z",
+          "c": 4.4
+        },
+        {
+          "t": "2026-09-01T17:30:00.000Z",
+          "c": 4.4
+        },
+        {
+          "t": "2026-09-01T17:45:00.000Z",
+          "c": 4.41
+        },
+        {
+          "t": "2026-09-01T18:00:00.000Z",
+          "c": 4.42
+        },
+        {
+          "t": "2026-09-01T18:15:00.000Z",
+          "c": 4.44
+        },
+        {
+          "t": "2026-09-01T18:30:00.000Z",
+          "c": 4.48
+        },
+        {
+          "t": "2026-09-01T18:45:00.000Z",
+          "c": 4.52
+        },
+        {
+          "t": "2026-09-01T19:00:00.000Z",
+          "c": 4.56
+        },
+        {
+          "t": "2026-09-01T19:15:00.000Z",
+          "c": 4.62
+        },
+        {
+          "t": "2026-09-01T19:30:00.000Z",
+          "c": 4.68
+        },
+        {
+          "t": "2026-09-01T19:45:00.000Z",
+          "c": 4.74
+        },
+        {
+          "t": "2026-09-01T20:00:00.000Z",
+          "c": 4.81
+        },
+        {
+          "t": "2026-09-01T20:15:00.000Z",
+          "c": 4.89
+        },
+        {
+          "t": "2026-09-01T20:30:00.000Z",
+          "c": 4.96
+        },
+        {
+          "t": "2026-09-01T20:45:00.000Z",
+          "c": 5.04
+        },
+        {
+          "t": "2026-09-01T21:00:00.000Z",
+          "c": 5.11
+        },
+        {
+          "t": "2026-09-01T21:15:00.000Z",
+          "c": 5.18
+        },
+        {
+          "t": "2026-09-01T21:30:00.000Z",
+          "c": 5.25
+        },
+        {
+          "t": "2026-09-01T21:45:00.000Z",
+          "c": 5.32
+        },
+        {
+          "t": "2026-09-01T22:00:00.000Z",
+          "c": 5.38
+        },
+        {
+          "t": "2026-09-01T22:15:00.000Z",
+          "c": 5.43
+        },
+        {
+          "t": "2026-09-01T22:30:00.000Z",
+          "c": 5.48
+        },
+        {
+          "t": "2026-09-01T22:45:00.000Z",
+          "c": 5.52
+        },
+        {
+          "t": "2026-09-01T23:00:00.000Z",
+          "c": 5.56
+        },
+        {
+          "t": "2026-09-01T23:15:00.000Z",
+          "c": 5.58
+        },
+        {
+          "t": "2026-09-01T23:30:00.000Z",
+          "c": 5.59
+        },
+        {
+          "t": "2026-09-01T23:45:00.000Z",
+          "c": 5.6
+        },
+        {
+          "t": "2026-09-02T00:00:00.000Z",
+          "c": 5.6
+        },
+        {
+          "t": "2026-09-02T00:15:00.000Z",
+          "c": 5.58
+        },
+        {
+          "t": "2026-09-02T00:30:00.000Z",
+          "c": 5.56
+        },
+        {
+          "t": "2026-09-02T00:45:00.000Z",
+          "c": 5.53
+        },
+        {
+          "t": "2026-09-02T01:00:00.000Z",
+          "c": 5.49
+        },
+        {
+          "t": "2026-09-02T01:15:00.000Z",
+          "c": 5.44
+        },
+        {
+          "t": "2026-09-02T01:30:00.000Z",
+          "c": 5.39
+        },
+        {
+          "t": "2026-09-02T01:45:00.000Z",
+          "c": 5.33
+        },
+        {
+          "t": "2026-09-02T02:00:00.000Z",
+          "c": 5.26
+        },
+        {
+          "t": "2026-09-02T02:15:00.000Z",
+          "c": 5.2
+        },
+        {
+          "t": "2026-09-02T02:30:00.000Z",
+          "c": 5.12
+        },
+        {
+          "t": "2026-09-02T02:45:00.000Z",
+          "c": 5.05
+        },
+        {
+          "t": "2026-09-02T03:00:00.000Z",
+          "c": 4.97
+        },
+        {
+          "t": "2026-09-02T03:15:00.000Z",
+          "c": 4.9
+        },
+        {
+          "t": "2026-09-02T03:30:00.000Z",
+          "c": 4.83
+        },
+        {
+          "t": "2026-09-02T03:45:00.000Z",
+          "c": 4.76
+        },
+        {
+          "t": "2026-09-02T04:00:00.000Z",
+          "c": 4.69
+        },
+        {
+          "t": "2026-09-02T04:15:00.000Z",
+          "c": 4.63
+        },
+        {
+          "t": "2026-09-02T04:30:00.000Z",
+          "c": 4.57
+        },
+        {
+          "t": "2026-09-02T04:45:00.000Z",
+          "c": 4.52
+        },
+        {
+          "t": "2026-09-02T05:00:00.000Z",
+          "c": 4.48
+        },
+        {
+          "t": "2026-09-02T05:15:00.000Z",
+          "c": 4.45
+        },
+        {
+          "t": "2026-09-02T05:30:00.000Z",
+          "c": 4.42
+        },
+        {
+          "t": "2026-09-02T05:45:00.000Z",
+          "c": 4.41
+        },
+        {
+          "t": "2026-09-02T06:00:00.000Z",
+          "c": 4.4
+        },
+        {
+          "t": "2026-09-02T06:15:00.000Z",
+          "c": 4.4
+        },
+        {
+          "t": "2026-09-02T06:30:00.000Z",
+          "c": 4.41
+        }
+      ],
+      "uploaded_at": "2026-09-02T06:45:00Z",
+      "transmission": "realtime",
+      "status": "active",
+      "corrected_by": null
+    },
+    {
+      "segment_id": "SEG-S4",
+      "sensor_id": "S4",
+      "calibration_id": "CAL-S4",
+      "started_at": "2026-09-02T06:30:00Z",
+      "ended_at": "2026-09-02T12:30:00Z",
+      "interval_s": 900,
+      "samples": [
+        {
+          "t": "2026-09-02T06:30:00.000Z",
+          "c": 4.91
+        },
+        {
+          "t": "2026-09-02T06:45:00.000Z",
+          "c": 4.9
+        },
+        {
+          "t": "2026-09-02T07:00:00.000Z",
+          "c": 4.9
+        },
+        {
+          "t": "2026-09-02T07:15:00.000Z",
+          "c": 4.92
+        },
+        {
+          "t": "2026-09-02T07:30:00.000Z",
+          "c": 4.95
+        },
+        {
+          "t": "2026-09-02T07:45:00.000Z",
+          "c": 4.99
+        },
+        {
+          "t": "2026-09-02T08:00:00.000Z",
+          "c": 5.04
+        },
+        {
+          "t": "2026-09-02T08:15:00.000Z",
+          "c": 5.1
+        },
+        {
+          "t": "2026-09-02T08:30:00.000Z",
+          "c": 5.18
+        },
+        {
+          "t": "2026-09-02T08:45:00.000Z",
+          "c": 5.25
+        },
+        {
+          "t": "2026-09-02T09:00:00.000Z",
+          "c": 5.33
+        },
+        {
+          "t": "2026-09-02T09:15:00.000Z",
+          "c": 5.42
+        },
+        {
+          "t": "2026-09-02T09:30:00.000Z",
+          "c": 5.5
+        },
+        {
+          "t": "2026-09-02T09:45:00.000Z",
+          "c": 5.58
+        },
+        {
+          "t": "2026-09-02T10:00:00.000Z",
+          "c": 5.66
+        },
+        {
+          "t": "2026-09-02T10:15:00.000Z",
+          "c": 5.72
+        },
+        {
+          "t": "2026-09-02T10:30:00.000Z",
+          "c": 5.78
+        },
+        {
+          "t": "2026-09-02T10:45:00.000Z",
+          "c": 5.83
+        },
+        {
+          "t": "2026-09-02T11:00:00.000Z",
+          "c": 5.87
+        },
+        {
+          "t": "2026-09-02T11:15:00.000Z",
+          "c": 5.89
+        },
+        {
+          "t": "2026-09-02T11:30:00.000Z",
+          "c": 5.9
+        },
+        {
+          "t": "2026-09-02T11:45:00.000Z",
+          "c": 5.9
+        },
+        {
+          "t": "2026-09-02T12:00:00.000Z",
+          "c": 5.88
+        },
+        {
+          "t": "2026-09-02T12:15:00.000Z",
+          "c": 5.85
+        },
+        {
+          "t": "2026-09-02T12:30:00.000Z",
+          "c": 5.8
+        }
+      ],
+      "uploaded_at": "2026-09-02T12:40:00Z",
+      "transmission": "realtime",
+      "status": "active",
+      "corrected_by": null
+    },
+    {
+      "segment_id": "SEG-S5",
+      "sensor_id": "S5",
+      "calibration_id": "CAL-S5",
+      "started_at": "2026-09-02T06:30:00Z",
+      "ended_at": "2026-09-02T13:30:00Z",
+      "interval_s": 900,
+      "samples": [
+        {
+          "t": "2026-09-02T06:30:00.000Z",
+          "c": 4.61
+        },
+        {
+          "t": "2026-09-02T06:45:00.000Z",
+          "c": 4.6
+        },
+        {
+          "t": "2026-09-02T07:00:00.000Z",
+          "c": 4.6
+        },
+        {
+          "t": "2026-09-02T07:15:00.000Z",
+          "c": 4.62
+        },
+        {
+          "t": "2026-09-02T07:30:00.000Z",
+          "c": 4.65
+        },
+        {
+          "t": "2026-09-02T07:45:00.000Z",
+          "c": 4.69
+        },
+        {
+          "t": "2026-09-02T08:00:00.000Z",
+          "c": 4.74
+        },
+        {
+          "t": "2026-09-02T08:15:00.000Z",
+          "c": 4.8
+        },
+        {
+          "t": "2026-09-02T08:30:00.000Z",
+          "c": 4.88
+        },
+        {
+          "t": "2026-09-02T08:45:00.000Z",
+          "c": 4.95
+        },
+        {
+          "t": "2026-09-02T09:00:00.000Z",
+          "c": 5.03
+        },
+        {
+          "t": "2026-09-02T09:15:00.000Z",
+          "c": 5.12
+        },
+        {
+          "t": "2026-09-02T09:30:00.000Z",
+          "c": 5.2
+        },
+        {
+          "t": "2026-09-02T09:45:00.000Z",
+          "c": 5.28
+        },
+        {
+          "t": "2026-09-02T10:00:00.000Z",
+          "c": 5.36
+        },
+        {
+          "t": "2026-09-02T10:15:00.000Z",
+          "c": 5.42
+        },
+        {
+          "t": "2026-09-02T10:30:00.000Z",
+          "c": 5.48
+        },
+        {
+          "t": "2026-09-02T10:45:00.000Z",
+          "c": 5.53
+        },
+        {
+          "t": "2026-09-02T11:00:00.000Z",
+          "c": 5.57
+        },
+        {
+          "t": "2026-09-02T11:15:00.000Z",
+          "c": 5.59
+        },
+        {
+          "t": "2026-09-02T11:30:00.000Z",
+          "c": 5.6
+        },
+        {
+          "t": "2026-09-02T11:45:00.000Z",
+          "c": 5.6
+        },
+        {
+          "t": "2026-09-02T12:00:00.000Z",
+          "c": 5.58
+        },
+        {
+          "t": "2026-09-02T12:15:00.000Z",
+          "c": 5.55
+        },
+        {
+          "t": "2026-09-02T12:30:00.000Z",
+          "c": 5.5
+        },
+        {
+          "t": "2026-09-02T12:45:00.000Z",
+          "c": 5.45
+        },
+        {
+          "t": "2026-09-02T13:00:00.000Z",
+          "c": 5.38
+        },
+        {
+          "t": "2026-09-02T13:15:00.000Z",
+          "c": 5.31
+        },
+        {
+          "t": "2026-09-02T13:30:00.000Z",
+          "c": 5.23
+        }
+      ],
+      "uploaded_at": "2026-09-02T13:40:00Z",
+      "transmission": "realtime",
+      "status": "active",
+      "corrected_by": null
+    },
+    {
+      "segment_id": "SEG-S6-GAP",
+      "sensor_id": "S6",
+      "calibration_id": "CAL-S6",
+      "started_at": "2026-09-05T02:00:00Z",
+      "ended_at": "2026-09-05T12:00:00Z",
+      "interval_s": 900,
+      "samples": [
+        {
+          "t": "2026-09-05T02:00:00.000Z",
+          "c": 5.67
+        },
+        {
+          "t": "2026-09-05T02:15:00.000Z",
+          "c": 5.62
+        },
+        {
+          "t": "2026-09-05T02:30:00.000Z",
+          "c": 5.55
+        },
+        {
+          "t": "2026-09-05T02:45:00.000Z",
+          "c": 5.46
+        },
+        {
+          "t": "2026-09-05T03:00:00.000Z",
+          "c": 5.37
+        },
+        {
+          "t": "2026-09-05T03:15:00.000Z",
+          "c": 5.27
+        },
+        {
+          "t": "2026-09-05T03:30:00.000Z",
+          "c": 5.17
+        },
+        {
+          "t": "2026-09-05T03:45:00.000Z",
+          "c": 5.08
+        },
+        {
+          "t": "2026-09-05T04:00:00.000Z",
+          "c": 5
+        },
+        {
+          "t": "2026-09-05T04:15:00.000Z",
+          "c": 4.95
+        },
+        {
+          "t": "2026-09-05T04:30:00.000Z",
+          "c": 4.91
+        },
+        {
+          "t": "2026-09-05T04:45:00.000Z",
+          "c": 4.9
+        },
+        {
+          "t": "2026-09-05T05:00:00.000Z",
+          "c": 4.91
+        },
+        {
+          "t": "2026-09-05T09:00:00.000Z",
+          "c": 5.78
+        },
+        {
+          "t": "2026-09-05T09:15:00.000Z",
+          "c": 5.68
+        },
+        {
+          "t": "2026-09-05T09:30:00.000Z",
+          "c": 5.58
+        },
+        {
+          "t": "2026-09-05T09:45:00.000Z",
+          "c": 5.48
+        },
+        {
+          "t": "2026-09-05T10:00:00.000Z",
+          "c": 5.39
+        },
+        {
+          "t": "2026-09-05T10:15:00.000Z",
+          "c": 5.31
+        },
+        {
+          "t": "2026-09-05T10:30:00.000Z",
+          "c": 5.25
+        },
+        {
+          "t": "2026-09-05T10:45:00.000Z",
+          "c": 5.21
+        },
+        {
+          "t": "2026-09-05T11:00:00.000Z",
+          "c": 5.2
+        },
+        {
+          "t": "2026-09-05T11:15:00.000Z",
+          "c": 5.21
+        },
+        {
+          "t": "2026-09-05T11:30:00.000Z",
+          "c": 5.24
+        },
+        {
+          "t": "2026-09-05T11:45:00.000Z",
+          "c": 5.3
+        },
+        {
+          "t": "2026-09-05T12:00:00.000Z",
+          "c": 5.38
+        }
+      ],
+      "uploaded_at": "2026-09-05T12:15:00Z",
+      "transmission": "realtime",
+      "status": "active",
+      "corrected_by": null,
+      "note": "05:00 后设备断电掉线，09:00 恢复，缺失读点未补"
+    }
+  ],
+  "quality_rules": [
+    {
+      "rule_id": "QR-COLD",
+      "version": 1,
+      "effective_from": "2026-01-01T00:00:00Z",
+      "min_c": 2,
+      "max_c": 8,
+      "max_excursion_minutes": 15,
+      "gap_policy": "mark_noncompliant",
+      "release_allowed_with_gap": false,
+      "text": "2–8°C 冷链；超限累计超过15分钟即不合规；任何无数据时段标记为缺口，禁止插值，带缺口不得放行。"
+    },
+    {
+      "rule_id": "QR-COLD",
+      "version": 2,
+      "effective_from": "2026-10-01T00:00:00Z",
+      "min_c": 2,
+      "max_c": 8,
+      "max_excursion_minutes": 30,
+      "gap_policy": "mark_noncompliant",
+      "release_allowed_with_gap": false,
+      "text": "未来版本（放宽至30分钟），不得溯及既往适用于9月的运输与处置。"
+    }
+  ],
+  "dispositions": [
+    {
+      "disposition_id": "D-001",
+      "at": "2026-09-05T13:00:00Z",
+      "batch_ids": [
+        "B4"
+      ],
+      "action": "quarantine",
+      "reason": "05:15–09:00 UTC 传感器掉线，存在3小时45分无数据缺口，按规则带缺口不得放行，先行隔离待查",
+      "rule_id": "QR-COLD",
+      "rule_version": 1,
+      "signer": "EMP-QL-01",
+      "based_on_segments": [
+        "SEG-S6-GAP"
+      ],
+      "based_on_release_entry": null
+    },
+    {
+      "disposition_id": "D-002",
+      "at": "2026-09-03T04:30:00Z",
+      "batch_ids": [
+        "B1"
+      ],
+      "action": "reject",
+      "reason": "晚到缓存片段显示运输途中开门后约35分钟 >8°C，超过15分钟限值；原放行所据实时均值数据不完整，整批报废",
+      "rule_id": "QR-COLD",
+      "rule_version": 1,
+      "signer": "EMP-QL-01",
+      "based_on_segments": [
+        "SEG-S1-BUFFERED-LATE"
+      ],
+      "based_on_release_entry": "REL-001"
+    },
+    {
+      "disposition_id": "D-003",
+      "at": "2026-09-11T09:30:00Z",
+      "batch_ids": [
+        "B3"
+      ],
+      "action": "reject",
+      "reason": "泡沫箱加铝箔纸无温控设备、无任何温度证据，且存在无人签署交接，全程不可核验，拒收并上报",
+      "rule_id": "QR-COLD",
+      "rule_version": 1,
+      "signer": "EMP-CLI2-01",
+      "based_on_segments": [],
+      "based_on_release_entry": null
+    }
+  ],
+  "release_ledger": [
+    {
+      "entry_id": "REL-001",
+      "seq": 1,
+      "at": "2026-09-02T07:00:00Z",
+      "kind": "release",
+      "decision": "released",
+      "batch_ids": [
+        "B1",
+        "B2"
+      ],
+      "rule_id": "QR-COLD",
+      "rule_version": 1,
+      "signer": "EMP-QL-01",
+      "supersedes_entry_id": null,
+      "reason": "到货核验：当时已上传片段全程2–8°C、无缺口",
+      "new_segments": [],
+      "basis": {
+        "as_of": "2026-09-02T07:00:00Z",
+        "verified_intervals": [
+          {
+            "batch_id": "B1",
+            "from": "2026-09-01T01:05:00.000Z",
+            "to": "2026-09-02T06:30:00.000Z"
+          },
+          {
+            "batch_id": "B2",
+            "from": "2026-09-01T18:00:00.000Z",
+            "to": "2026-09-02T06:30:00.000Z"
+          }
+        ],
+        "gaps": [],
+        "excursions": [],
+        "segments_used": [
+          "SEG-S1-REALTIME",
+          "SEG-S2"
+        ],
+        "data_complete": true
+      },
+      "prev_hash": "GENESIS",
+      "entry_hash": "53b952d019df01deac9c1b4417d00753b68ab9c679159fe6e579c9394464a6d2"
+    },
+    {
+      "entry_id": "REL-003",
+      "seq": 2,
+      "at": "2026-09-02T12:45:00Z",
+      "kind": "release",
+      "decision": "released",
+      "batch_ids": [
+        "B1-A"
+      ],
+      "rule_id": "QR-COLD",
+      "rule_version": 1,
+      "signer": "EMP-QL-01",
+      "supersedes_entry_id": null,
+      "reason": "拆分后城市药房收货，配送段数据全程合规",
+      "new_segments": [],
+      "basis": {
+        "as_of": "2026-09-02T12:45:00Z",
+        "verified_intervals": [
+          {
+            "batch_id": "B1-A",
+            "from": "2026-09-02T06:30:00.000Z",
+            "to": "2026-09-02T12:30:00.000Z"
+          }
+        ],
+        "gaps": [],
+        "excursions": [],
+        "segments_used": [
+          "SEG-S4"
+        ],
+        "data_complete": true
+      },
+      "prev_hash": "53b952d019df01deac9c1b4417d00753b68ab9c679159fe6e579c9394464a6d2",
+      "entry_hash": "a9c69b46a49e2aa93a92b436ea6fd817b45bcbc13384bb2a4b21cf1adb1f8b8f"
+    },
+    {
+      "entry_id": "REL-004",
+      "seq": 3,
+      "at": "2026-09-02T13:45:00Z",
+      "kind": "release",
+      "decision": "released",
+      "batch_ids": [
+        "B1-B"
+      ],
+      "rule_id": "QR-COLD",
+      "rule_version": 1,
+      "signer": "EMP-QL-01",
+      "supersedes_entry_id": null,
+      "reason": "拆分后社区诊所收货，配送段数据全程合规",
+      "new_segments": [],
+      "basis": {
+        "as_of": "2026-09-02T13:45:00Z",
+        "verified_intervals": [
+          {
+            "batch_id": "B1-B",
+            "from": "2026-09-02T06:30:00.000Z",
+            "to": "2026-09-02T13:30:00.000Z"
+          }
+        ],
+        "gaps": [],
+        "excursions": [],
+        "segments_used": [
+          "SEG-S5"
+        ],
+        "data_complete": true
+      },
+      "prev_hash": "a9c69b46a49e2aa93a92b436ea6fd817b45bcbc13384bb2a4b21cf1adb1f8b8f",
+      "entry_hash": "4d811ff64a5124b90b6e892cf814615eadb5e42e49875294604795009872af50"
+    },
+    {
+      "entry_id": "REL-002",
+      "seq": 4,
+      "at": "2026-09-03T04:00:00Z",
+      "kind": "revocation",
+      "decision": "revoked",
+      "batch_ids": [
+        "B1"
+      ],
+      "rule_id": "QR-COLD",
+      "rule_version": 1,
+      "signer": "EMP-QL-01",
+      "supersedes_entry_id": "REL-001",
+      "reason": "晚到的缓存原始日志揭示35分钟超限，原放行依据不完整；撤销B1原放行并追查下游",
+      "new_segments": [
+        "SEG-S1-BUFFERED-LATE"
+      ],
+      "basis": {
+        "as_of": "2026-09-03T04:00:00Z",
+        "verified_intervals": [
+          {
+            "batch_id": "B1",
+            "from": "2026-09-01T01:05:00.000Z",
+            "to": "2026-09-02T06:30:00.000Z"
+          }
+        ],
+        "gaps": [],
+        "excursions": [
+          {
+            "batch_id": "B1",
+            "from": "2026-09-01T10:21:00.000Z",
+            "to": "2026-09-01T10:58:00.000Z",
+            "max_c": 13.35,
+            "min_c": 12
+          }
+        ],
+        "segments_used": [
+          "SEG-S1-REALTIME",
+          "SEG-S1-BUFFERED-LATE",
+          "SEG-S2"
+        ],
+        "data_complete": true
+      },
+      "prev_hash": "4d811ff64a5124b90b6e892cf814615eadb5e42e49875294604795009872af50",
+      "entry_hash": "36b01bbcb154ec053bb3dadf1b9c9251dd0ca8ce6a9e85bb71c1f98e57bc2444"
+    }
+  ],
+  "notifications": [
+    {
+      "notification_id": "N-001",
+      "revocation_entry_id": "REL-002",
+      "batch_id": "B1-A",
+      "downstream_party_id": "P-PHA",
+      "status": "acked",
+      "sent_at": "2026-09-03T05:00:00Z",
+      "acked_at": "2026-09-03T06:10:00Z"
+    },
+    {
+      "notification_id": "N-002",
+      "revocation_entry_id": "REL-002",
+      "batch_id": "B1-B",
+      "downstream_party_id": "P-CLI",
+      "status": "pending",
+      "sent_at": "2026-09-03T05:00:00Z",
+      "acked_at": null
+    }
+  ]
+}

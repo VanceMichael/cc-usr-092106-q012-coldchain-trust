@@ -1,0 +1,444 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "伪冷链药品运输可信证明证据包",
+  "description": "证据只追加、不覆盖。温度片段携带 uploaded_at，放行账本以哈希链封存；可核验区间、超限、缺口与责任段一律由证据派生，不写回本文件。",
+  "type": "object",
+  "required": [
+    "domain",
+    "schema_version",
+    "generated_at",
+    "sensors",
+    "calibrations",
+    "containers",
+    "batches",
+    "tasks",
+    "parties",
+    "events",
+    "temperature_segments",
+    "quality_rules",
+    "dispositions",
+    "release_ledger",
+    "notifications"
+  ],
+  "properties": {
+    "domain": { "const": "coldchain-trust" },
+    "schema_version": { "type": "integer", "minimum": 1 },
+    "generated_at": { "type": "string" },
+    "sensors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["sensor_id", "hw_serial", "attestation_key_id"],
+        "properties": {
+          "sensor_id": { "type": "string" },
+          "hw_serial": { "type": "string" },
+          "attestation_key_id": { "type": "string" },
+          "model": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "calibrations": {
+      "type": "array",
+      "description": "校准版本。audit_correction 可以对历史读数给出修正偏置，但修正只能产生新片段，不得改写旧片段。",
+      "items": {
+        "type": "object",
+        "required": [
+          "calibration_id",
+          "sensor_id",
+          "kind",
+          "valid_from",
+          "bias_c",
+          "max_uncertainty_c",
+          "calibrated_by",
+          "certificate_ref"
+        ],
+        "properties": {
+          "calibration_id": { "type": "string" },
+          "sensor_id": { "type": "string" },
+          "kind": { "enum": ["initial", "audit_correction"] },
+          "valid_from": { "type": "string" },
+          "valid_to": { "type": ["string", "null"] },
+          "bias_c": { "type": "number" },
+          "max_uncertainty_c": { "type": "number", "minimum": 0 },
+          "calibrated_by": { "type": "string" },
+          "certificate_ref": { "type": "string" },
+          "corrects_calibration_id": { "type": ["string", "null"] }
+        },
+        "additionalProperties": false
+      }
+    },
+    "containers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["container_id", "kind"],
+        "properties": {
+          "container_id": { "type": "string" },
+          "kind": {
+            "enum": ["reefer", "insulated_box", "passive_pack", "foam_wrapped"],
+            "description": "foam_wrapped 即泡沫箱加铝箔纸伪装，本身不产生任何温度证据"
+          },
+          "seal_id": { "type": ["string", "null"] },
+          "note": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "batches": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["batch_id", "product_name", "initial_quantity"],
+        "properties": {
+          "batch_id": { "type": "string" },
+          "product_name": { "type": "string" },
+          "initial_quantity": { "type": "integer", "minimum": 1 },
+          "unit": { "type": "string" },
+          "manufacture_date": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "tasks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["task_id", "carrier_party_id", "temp_spec", "route"],
+        "properties": {
+          "task_id": { "type": "string" },
+          "carrier_party_id": { "type": "string" },
+          "temp_spec": {
+            "type": "object",
+            "required": ["min_c", "max_c"],
+            "properties": {
+              "min_c": { "type": "number" },
+              "max_c": { "type": "number" }
+            },
+            "additionalProperties": false
+          },
+          "route": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": ["location", "tz"],
+              "properties": {
+                "location": { "type": "string" },
+                "tz": { "type": "string", "description": "IANA 时区，仅用于展示；判定一律用 UTC 时刻" }
+              },
+              "additionalProperties": false
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "parties": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["party_id", "name", "role"],
+        "properties": {
+          "party_id": { "type": "string" },
+          "name": { "type": "string" },
+          "role": {
+            "enum": ["manufacturer", "carrier", "hub", "distributor", "pharmacy", "clinic", "unlicensed"]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "events": {
+      "type": "array",
+      "description": "只追加的交接与操作事件流。at 为带偏移的 ISO-8601 时刻，跨时区由偏移归并为 UTC。换箱用 repack，拼箱用多批次 pack，拆分用 split。",
+      "items": {
+        "type": "object",
+        "required": ["event_id", "at", "type", "signed_by"],
+        "properties": {
+          "event_id": { "type": "string" },
+          "at": { "type": "string" },
+          "type": {
+            "enum": [
+              "pack",
+              "repack",
+              "split",
+              "unpack",
+              "handover",
+              "door_open",
+              "door_close",
+              "attach",
+              "detach",
+              "receipt"
+            ]
+          },
+          "task_id": { "type": ["string", "null"] },
+          "location": { "type": ["string", "null"] },
+          "from_party": { "type": ["string", "null"] },
+          "to_party": { "type": ["string", "null"] },
+          "container_id": { "type": ["string", "null"] },
+          "from_container_id": { "type": ["string", "null"] },
+          "batch_ids": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "outputs": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["batch_id", "container_id", "quantity"],
+              "properties": {
+                "batch_id": { "type": "string" },
+                "container_id": { "type": "string" },
+                "quantity": { "type": "integer", "minimum": 1 }
+              },
+              "additionalProperties": false
+            }
+          },
+          "sensor_id": { "type": ["string", "null"] },
+          "seal_id": { "type": ["string", "null"] },
+          "signed_by": {
+            "type": ["string", "null"],
+            "description": "签署人工号；null 表示无人签署，责任链在此断裂而不是被悄悄补全"
+          },
+          "note": { "type": ["string", "null"] }
+        },
+        "additionalProperties": false
+      }
+    },
+    "temperature_segments": {
+      "type": "array",
+      "description": "一段不可变温度记录。samples 为实际读数；没有读数的时间只能成为缺口，禁止插值。uploaded_at 决定该片段在某个放行时刻是否可用。",
+      "items": {
+        "type": "object",
+        "required": [
+          "segment_id",
+          "sensor_id",
+          "calibration_id",
+          "started_at",
+          "ended_at",
+          "interval_s",
+          "samples",
+          "uploaded_at",
+          "transmission",
+          "status"
+        ],
+        "properties": {
+          "segment_id": { "type": "string" },
+          "sensor_id": { "type": "string" },
+          "calibration_id": { "type": "string" },
+          "started_at": { "type": "string" },
+          "ended_at": { "type": "string" },
+          "interval_s": { "type": "integer", "minimum": 1 },
+          "samples": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["t", "c"],
+              "properties": {
+                "t": { "type": "string" },
+                "c": { "type": "number" }
+              },
+              "additionalProperties": false
+            }
+          },
+          "uploaded_at": { "type": "string" },
+          "transmission": { "enum": ["realtime", "buffered_late"] },
+          "status": { "enum": ["active", "corrected"] },
+          "corrected_by": { "type": ["string", "null"] },
+          "note": { "type": ["string", "null"] }
+        },
+        "additionalProperties": false
+      }
+    },
+    "quality_rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "rule_id",
+          "version",
+          "effective_from",
+          "min_c",
+          "max_c",
+          "max_excursion_minutes",
+          "gap_policy",
+          "release_allowed_with_gap",
+          "text"
+        ],
+        "properties": {
+          "rule_id": { "type": "string" },
+          "version": { "type": "integer", "minimum": 1 },
+          "effective_from": { "type": "string" },
+          "min_c": { "type": "number" },
+          "max_c": { "type": "number" },
+          "max_excursion_minutes": { "type": "integer", "minimum": 0 },
+          "gap_policy": {
+            "enum": ["mark_noncompliant"],
+            "description": "唯一允许的策略：缺口标记为不合规，不得用相邻读数补齐"
+          },
+          "release_allowed_with_gap": { "const": false },
+          "text": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "dispositions": {
+      "type": "array",
+      "description": "异常处置：继续观察 / 隔离 / 报废，必须引用当时生效的质量规则版本与签署人。",
+      "items": {
+        "type": "object",
+        "required": [
+          "disposition_id",
+          "at",
+          "batch_ids",
+          "action",
+          "reason",
+          "rule_id",
+          "rule_version",
+          "signer"
+        ],
+        "properties": {
+          "disposition_id": { "type": "string" },
+          "at": { "type": "string" },
+          "batch_ids": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+          "action": { "enum": ["observe", "quarantine", "reject"] },
+          "reason": { "type": "string" },
+          "rule_id": { "type": "string" },
+          "rule_version": { "type": "integer", "minimum": 1 },
+          "signer": { "type": "string" },
+          "based_on_segments": { "type": "array", "items": { "type": "string" } },
+          "based_on_release_entry": { "type": ["string", "null"] }
+        },
+        "additionalProperties": false
+      }
+    },
+    "release_ledger": {
+      "type": "array",
+      "description": "放行账本，只追加。撤销以新条目指向旧条目（supersedes_entry_id），旧条目内容与哈希永不改变。",
+      "items": {
+        "type": "object",
+        "required": [
+          "entry_id",
+          "seq",
+          "at",
+          "kind",
+          "decision",
+          "batch_ids",
+          "rule_id",
+          "rule_version",
+          "signer",
+          "basis",
+          "prev_hash",
+          "entry_hash"
+        ],
+        "properties": {
+          "entry_id": { "type": "string" },
+          "seq": { "type": "integer", "minimum": 1 },
+          "at": { "type": "string" },
+          "kind": { "enum": ["release", "revocation"] },
+          "decision": { "enum": ["released", "revoked"] },
+          "batch_ids": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+          "rule_id": { "type": "string" },
+          "rule_version": { "type": "integer", "minimum": 1 },
+          "signer": { "type": "string" },
+          "supersedes_entry_id": { "type": ["string", "null"] },
+          "reason": { "type": ["string", "null"] },
+          "new_segments": {
+            "type": "array",
+            "description": "触发撤销的晚到证据片段",
+            "items": { "type": "string" }
+          },
+          "basis": {
+            "type": "object",
+            "required": [
+              "as_of",
+              "verified_intervals",
+              "gaps",
+              "excursions",
+              "segments_used",
+              "data_complete"
+            ],
+            "properties": {
+              "as_of": { "type": "string" },
+              "verified_intervals": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": ["batch_id", "from", "to"],
+                  "properties": {
+                    "batch_id": { "type": "string" },
+                    "from": { "type": "string" },
+                    "to": { "type": "string" }
+                  },
+                  "additionalProperties": false
+                }
+              },
+              "gaps": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": ["batch_id", "from", "to", "reason"],
+                  "properties": {
+                    "batch_id": { "type": "string" },
+                    "from": { "type": "string" },
+                    "to": { "type": "string" },
+                    "reason": {
+                      "enum": ["no_sensor", "sensor_offline", "no_segment_yet", "outside_containment"]
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              },
+              "excursions": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": ["batch_id", "from", "to", "max_c"],
+                  "properties": {
+                    "batch_id": { "type": "string" },
+                    "from": { "type": "string" },
+                    "to": { "type": "string" },
+                    "max_c": { "type": "number" },
+                    "min_c": { "type": "number" }
+                  },
+                  "additionalProperties": false
+                }
+              },
+              "segments_used": { "type": "array", "items": { "type": "string" } },
+              "data_complete": { "type": "boolean" }
+            },
+            "additionalProperties": false
+          },
+          "prev_hash": { "type": "string" },
+          "entry_hash": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "notifications": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "notification_id",
+          "revocation_entry_id",
+          "batch_id",
+          "downstream_party_id",
+          "status"
+        ],
+        "properties": {
+          "notification_id": { "type": "string" },
+          "revocation_entry_id": { "type": "string" },
+          "batch_id": { "type": "string" },
+          "downstream_party_id": { "type": "string" },
+          "status": { "enum": ["pending", "notified", "acked"] },
+          "sent_at": { "type": ["string", "null"] },
+          "acked_at": { "type": ["string", "null"] }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
